@@ -74,13 +74,16 @@ let appData = {
     },
     chooseIncome: function() {
         let items = prompt('Что принесет доп.доход (Через запятую)?', '');
-        if((items == '') || (items == null) || (typeof(items) != 'string')) {
+        if((items != '') && (typeof(items) != null) && (typeof(items) === 'string')) {
+            appData.income = items.split(', ');
+        }
+        else {
             items = prompt('Что принесет доп.доход (Через запятую)?', '');
         }
-        
-        appData.income = items.split(', ');
         appData.income.push(prompt('Ничего не забыли?'));
     }
 };
 
 appData.chooseIncome();
+
+let a = [1, 2, 3]; let b = [1, 2, 3]; console.log(0 || "" || 2 || undefined || true || falsе);
